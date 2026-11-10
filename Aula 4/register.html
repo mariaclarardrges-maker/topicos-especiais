@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="login-card">
+        <div class="login-glow"></div>
+
+        <div class="branding">
+          <div class="brand-mark">L</div>
+          <div class="brand-text">
+            <span class="eyebrow">Crie sua conta</span>
+            <h1>Cadastre-se</h1>
+          </div>
+        </div>
+
+        <p class="subtitle">Preencha os dados abaixo para criar sua conta.</p>
+
+        <form class="login-form" id="registerForm">
+          <div class="input-row">
+            <div class="input-group">
+              <label for="firstName">Nome</label>
+              <input id="firstName" type="text" placeholder="Seu nome" />
+            </div>
+
+            <div class="input-group">
+              <label for="lastName">Sobrenome</label>
+              <input id="lastName" type="text" placeholder="Seu sobrenome" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="registerEmail">E-mail</label>
+            <input id="registerEmail" type="email" placeholder="seuemail@exemplo.com" />
+          </div>
+
+          <div class="input-group password-group">
+            <label for="registerPassword">Senha</label>
+            <div class="input-wrap">
+              <input id="registerPassword" type="password" placeholder="Crie uma senha" />
+              <button type="button" class="password-toggle" aria-label="Mostrar senha">Mostrar</button>
+            </div>
+          </div>
+
+          <div class="input-group password-group">
+            <label for="confirmPassword">Confirmar senha</label>
+            <div class="input-wrap">
+              <input id="confirmPassword" type="password" placeholder="Repita a senha" />
+              <button type="button" class="password-toggle" aria-label="Mostrar senha">Mostrar</button>
+            </div>
+          </div>
+
+          <label class="remember-me">
+            <input type="checkbox" />
+            <span>Aceito os termos e políticas</span>
+          </label>
+
+          <button type="submit" class="primary-btn" id="registerBtn">
+            <span class="btn-label">Criar conta</span>
+          </button>
+
+          <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+          <p class="signup-text">
+            Já tem uma conta?
+            <a href="index.html">Entrar</a>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      const form = document.getElementById('registerForm');
+      const registerBtn = document.getElementById('registerBtn');
+      const btnLabel = registerBtn.querySelector('.btn-label');
+      const formMessage = document.getElementById('formMessage');
+      const toggles = document.querySelectorAll('.password-toggle');
+
+      function showMessage(message, type = 'info') {
+        formMessage.textContent = message;
+        formMessage.className = `form-message ${type}`;
+      }
+
+      toggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const input = toggle.parentElement.querySelector('input');
+          const isPassword = input.type === 'password';
+          input.type = isPassword ? 'text' : 'password';
+          toggle.textContent = isPassword ? 'Ocultar' : 'Mostrar';
+          toggle.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+        });
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('registerEmail').value.trim();
+        const password = document.getElementById('registerPassword').value.trim();
+        const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+        if (!firstName || !lastName || !email || !password || !confirmPassword) {
+          showMessage('Preencha todos os campos antes de continuar.', 'error');
+          return;
+        }
+
+        if (!email.includes('@') || !email.includes('.')) {
+          showMessage('Digite um e-mail válido.', 'error');
+          return;
+        }
+
+        if (password.length < 6) {
+          showMessage('A senha deve ter pelo menos 6 caracteres.', 'error');
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          showMessage('As senhas não coincidem.', 'error');
+          return;
+        }
+
+        registerBtn.disabled = true;
+        btnLabel.textContent = 'Criando...';
+        showMessage('Criando sua conta...', 'info');
+
+        setTimeout(() => {
+          registerBtn.disabled = false;
+          btnLabel.textContent = 'Criar conta';
+          showMessage('Conta criada com sucesso!', 'success');
+          form.reset();
+        }, 1200);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="browser-shell">
+      <div class="browser-bar">
+        <div class="traffic-lights">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+
+        <div class="browser-actions">
+          <button class="nav-btn" aria-label="Back">←</button>
+          <button class="nav-btn" aria-label="Forward">→</button>
+        </div>
+
+        <div class="address-bar">
+          <span class="address-icon">◌</span>
+          <span>https://onlypipe.com/register</span>
+        </div>
+
+        <div class="browser-tools">
+          <span>⤴</span>
+          <span>⎘</span>
+        </div>
+      </div>
+
+      <main class="auth-layout">
+        <aside class="promo-panel">
+          <div class="promo-overlay"></div>
+
+          <div class="promo-content">
+            <div class="brand-lockup">
+              <span class="brand-mark" aria-label="GitHub logo">
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.64 7.64 0 0 1 8 4.57c.68 0 1.36.09 2 .26 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                </svg>
+              </span>
+              <span class="brand-name">GitHub</span>
+            </div>
+
+            <h1>Get Started with Us</h1>
+            <p>Complete these easy steps to register your account.</p>
+
+            <div class="step-list">
+              <button class="step active" type="button">
+                <span class="step-number">1</span>
+                <span>Sign up your account</span>
+              </button>
+              <button class="step" type="button">
+                <span class="step-number">2</span>
+                <span>Set up your workspace</span>
+              </button>
+              <button class="step" type="button">
+                <span class="step-number">3</span>
+                <span>Set up your profile</span>
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <section class="form-panel">
+          <h2>Sign Up Account</h2>
+          <p class="subtitle">Enter your personal data to create your account.</p>
+
+          <div class="social-login">
+            <button type="button" class="social-btn">
+              <span class="social-icon google">G</span>
+              Google
+            </button>
+            <button type="button" class="social-btn github-btn">
+              <span class="social-icon github" aria-label="GitHub">
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.64 7.64 0 0 1 8 4.57c.68 0 1.36.09 2 .26 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                </svg>
+              </span>
+              GitHub
+            </button>
+          </div>
+
+          <div class="divider"><span>or</span></div>
+
+          <div class="auth-switch" aria-label="Authentication mode">
+            <button type="button" class="auth-tab active" data-mode="signup">Sign Up</button>
+            <button type="button" class="auth-tab" data-mode="login">Log In</button>
+          </div>
+
+          <form class="signup-form auth-form active" novalidate>
+            <div class="input-row">
+              <div class="field">
+                <label for="first-name">First Name</label>
+                <input id="first-name" type="text" placeholder="eg. John" autocomplete="given-name" />
+              </div>
+
+              <div class="field">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" type="text" placeholder="eg. Francisco" autocomplete="family-name" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="eg. johnfrancisco@gmail.com" autocomplete="email" />
+            </div>
+
+            <div class="field password-field">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="Enter your password" autocomplete="new-password" />
+              <button type="button" class="eye" aria-label="Mostrar senha">◉</button>
+            </div>
+
+            <div class="form-meta">
+              <label class="check-wrap">
+                <input type="checkbox" checked />
+                <span>Remember me</span>
+              </label>
+              <a href="#" class="secondary-link">Forgot password?</a>
+            </div>
+
+            <p class="password-hint">Must be at least 8 characters.</p>
+            <div class="password-strength" aria-live="polite">
+              <span class="strength-bar"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">Sign Up</button>
+            <p class="status-message" aria-live="polite"></p>
+          </form>
+
+          <form class="login-form auth-form" novalidate>
+            <div class="field">
+              <label for="login-email">Email</label>
+              <input id="login-email" type="email" placeholder="Enter your email" autocomplete="email" />
+            </div>
+
+            <div class="field password-field">
+              <label for="login-password">Password</label>
+              <input id="login-password" type="password" placeholder="Enter your password" autocomplete="current-password" />
+              <button type="button" class="eye login-eye" aria-label="Mostrar senha">◉</button>
+            </div>
+
+            <div class="form-meta">
+              <label class="check-wrap">
+                <input type="checkbox" checked />
+                <span>Keep me signed in</span>
+              </label>
+              <a href="#" class="secondary-link">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="submit-btn login-btn">Log In</button>
+            <p class="status-message login-status" aria-live="polite"></p>
+          </form>
+
+          <p class="login-link">Already have an account? <a href="#" class="toggle-login">Log in</a></p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const signupForm = document.querySelector('.signup-form');
+      const loginForm = document.querySelector('.login-form');
+      const passwordInput = document.getElementById('password');
+      const loginPasswordInput = document.getElementById('login-password');
+      const eyeButton = document.querySelector('.eye');
+      const loginEyeButton = document.querySelector('.login-eye');
+      const submitButton = document.querySelector('.submit-btn');
+      const statusMessage = document.querySelector('.status-message');
+      const loginStatusMessage = document.querySelector('.login-status');
+      const strengthBar = document.querySelector('.strength-bar');
+      const socialButtons = document.querySelectorAll('.social-btn');
+      const steps = document.querySelectorAll('.step');
+      const forgotPasswordLinks = document.querySelectorAll('.secondary-link');
+      const modeButtons = document.querySelectorAll('.auth-tab');
+      const authForms = document.querySelectorAll('.auth-form');
+      const toggleLoginLink = document.querySelector('.toggle-login');
+
+      const showMode = (mode) => {
+        modeButtons.forEach((button) => {
+          button.classList.toggle('active', button.dataset.mode === mode);
+        });
+
+        authForms.forEach((form) => {
+          form.classList.toggle('active', form.classList.contains(mode + '-form'));
+        });
+
+        const linkText = document.querySelector('.login-link');
+        const isLogin = mode === 'login';
+        linkText.innerHTML = isLogin
+          ? 'Need an account? <a href="#" class="toggle-login">Sign up</a>'
+          : 'Already have an account? <a href="#" class="toggle-login">Log in</a>';
+
+        const newToggle = document.querySelector('.toggle-login');
+        newToggle.addEventListener('click', (event) => {
+          event.preventDefault();
+          showMode(isLogin ? 'signup' : 'login');
+        });
+      };
+
+      const updatePasswordStrength = () => {
+        const value = passwordInput.value;
+        let strength = 0;
+
+        if (value.length >= 8) strength += 40;
+        if (/[A-Z]/.test(value)) strength += 20;
+        if (/[0-9]/.test(value)) strength += 20;
+        if (/[^A-Za-z0-9]/.test(value)) strength += 20;
+
+        const width = Math.min(strength, 100);
+        strengthBar.style.width = `${width}%`;
+      };
+
+      passwordInput.addEventListener('input', updatePasswordStrength);
+
+      eyeButton.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        eyeButton.textContent = isPassword ? '◌' : '◉';
+        eyeButton.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+      });
+
+      loginEyeButton.addEventListener('click', () => {
+        const isPassword = loginPasswordInput.type === 'password';
+        loginPasswordInput.type = isPassword ? 'text' : 'password';
+        loginEyeButton.textContent = isPassword ? '◌' : '◉';
+        loginEyeButton.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+      });
+
+      steps.forEach((step) => {
+        step.addEventListener('click', () => {
+          steps.forEach((item) => item.classList.remove('active'));
+          step.classList.add('active');
+        });
+      });
+
+      socialButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const provider = button.textContent.trim();
+          statusMessage.textContent = `Continuing with ${provider}...`;
+          statusMessage.className = 'status-message';
+          loginStatusMessage.textContent = `Continuing with ${provider}...`;
+          loginStatusMessage.className = 'status-message login-status';
+        });
+      });
+
+      forgotPasswordLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const message = document.querySelector('.auth-form.active .status-message') || statusMessage;
+          message.textContent = 'Password recovery link sent to your email.';
+          message.className = 'status-message success';
+        });
+      });
+
+      modeButtons.forEach((button) => {
+        button.addEventListener('click', () => showMode(button.dataset.mode));
+      });
+
+      toggleLoginLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        showMode('login');
+      });
+
+      signupForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const firstName = document.getElementById('first-name').value.trim();
+        const lastName = document.getElementById('last-name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = passwordInput.value;
+
+        if (!firstName || !lastName || !email || !password) {
+          statusMessage.textContent = 'Please fill in all fields before continuing.';
+          statusMessage.className = 'status-message error';
+          return;
+        }
+
+        if (password.length < 8) {
+          statusMessage.textContent = 'Password must have at least 8 characters.';
+          statusMessage.className = 'status-message error';
+          return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Creating account...';
+        statusMessage.textContent = 'Creating your account...';
+        statusMessage.className = 'status-message';
+
+        setTimeout(() => {
+          statusMessage.textContent = `Welcome, ${firstName}! Your account was created successfully.`;
+          statusMessage.className = 'status-message success';
+          submitButton.disabled = false;
+          submitButton.textContent = 'Sign Up';
+          signupForm.reset();
+          strengthBar.style.width = '0%';
+        }, 1200);
+      });
+
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const email = document.getElementById('login-email').value.trim();
+        const password = loginPasswordInput.value;
+
+        if (!email || !password) {
+          loginStatusMessage.textContent = 'Please enter your email and password.';
+          loginStatusMessage.className = 'status-message login-status error';
+          return;
+        }
+
+        const loginButton = document.querySelector('.login-btn');
+        loginButton.disabled = true;
+        loginButton.textContent = 'Signing in...';
+        loginStatusMessage.textContent = 'Checking your credentials...';
+        loginStatusMessage.className = 'status-message login-status';
+
+        setTimeout(() => {
+          loginStatusMessage.textContent = `Welcome back, ${email}! You are now logged in.`;
+          loginStatusMessage.className = 'status-message login-status success';
+          loginButton.disabled = false;
+          loginButton.textContent = 'Log In';
+          loginForm.reset();
+        }, 1200);
+      });
+    </script>
+  </body>
+</html>
